@@ -402,6 +402,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4258705275803674607}
+  mesh:
+  - {fileID: 7833266593194416559}
+  - {fileID: 7833266593194416553}
+  - {fileID: 7833266593194416551}
+  - {fileID: 7833266593194416557}
 --- !u!54 &4258705275803674607
 Rigidbody:
   m_ObjectHideFlags: 0
