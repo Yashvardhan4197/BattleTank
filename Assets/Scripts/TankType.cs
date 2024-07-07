@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum TankType { 
-    Yellow, Green, Blue
+    Red, Green, Blue
 }
