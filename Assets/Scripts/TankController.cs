@@ -34,4 +34,24 @@ public class TankController
     {
         return tankModel;
     }
+
+    public void FireBullet(Transform Bullettransform,Rigidbody bulletRb,float bulletSpeed)
+    {
+       bulletRb.velocity=Bullettransform.forward*bulletSpeed;
+    }
+
+    public IEnumerator CameraShake(GameObject camera,float magnitude,float duration)
+    {
+        Vector3 originalPos=camera.transform.localPosition;
+        float elapsedTime=0;
+        while (elapsedTime < duration)
+        {
+            float x=Random.Range(-1,1)*magnitude;
+            float y=Random.Range(-1, 1)*magnitude;
+            camera.transform.localPosition=new Vector3(originalPos.x+x,originalPos.y+y,camera.transform.localPosition.z);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        camera.transform.localPosition = originalPos;
+    }
 }

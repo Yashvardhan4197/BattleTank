@@ -5,12 +5,15 @@ using UnityEngine;
 public class TankSpawner : MonoBehaviour
 {
     [SerializeField] private TankView tankView;
+    public float cameraShakeMagnitude;
+    public float cameraShakeDuration;
 
     [System.Serializable]
     class Tank
     {
         public float movement;
         public float speed;
+        public float BulletSpeed;
         public TankType type;
         public Material color;
     }
@@ -29,19 +32,19 @@ public class TankSpawner : MonoBehaviour
 
         if (tankType == TankType.Red)
         {
-            TankModel tankModel = new TankModel(tank[0].movement, tank[0].speed, tank[0].type, tank[0].color);
+            TankModel tankModel = new TankModel(tank[0].movement, tank[0].speed, tank[0].type, tank[0].color, tank[0].BulletSpeed,cameraShakeMagnitude,cameraShakeDuration);
             TankController tankController = new TankController(tankModel, tankView);
             
         }
         else if(tankType == TankType.Green)
         {
-            TankModel tankModel = new TankModel(tank[1].movement, tank[1].speed, tank[1].type, tank[1].color);
+            TankModel tankModel = new TankModel(tank[1].movement, tank[1].speed, tank[1].type, tank[1].color, tank[1].BulletSpeed, cameraShakeMagnitude, cameraShakeDuration);
             TankController tankController = new TankController(tankModel, tankView);
            
         }
         else if( tankType == TankType.Blue)
         {
-            TankModel tankModel = new TankModel(tank[2].movement, tank[2].speed, tank[2].type, tank[2].color);
+            TankModel tankModel = new TankModel(tank[2].movement, tank[2].speed, tank[2].type, tank[2].color, tank[2].BulletSpeed, cameraShakeMagnitude, cameraShakeDuration);
             TankController tankController = new TankController(tankModel, tankView);
        
         }
